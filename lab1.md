@@ -7,7 +7,7 @@ Running cd with **no arguments**:
 [user@sahara ~/lecture1/messages]$ cd
 [user@sahara ~]$
 ```
-- The working directionary was initially ./lecture1, but by running the cd command, it steps out of every file in the path. 
+- The working directionary was initially ~/lecture1/messages, but by running the cd command, it steps out of every file in the path. 
 - This is not a error.
 
 Running cd with **a path to a directory as an argument**:
