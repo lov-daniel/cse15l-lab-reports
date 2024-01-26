@@ -53,5 +53,7 @@ class ChatServer {
 }
 ```
 
+## Usage Screenshots
+
 ![Image](/lab2_images/first_image.png)
 
