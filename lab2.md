@@ -57,3 +57,6 @@ class ChatServer {
 
 ![Image](/lab2_images/first_image.png)
 
+insert text here lol
+
+![Image](/lab2_images/second_image.png)
