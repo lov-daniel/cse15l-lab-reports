@@ -53,5 +53,5 @@ class ChatServer {
 }
 ```
 
-![](/lab2_images/first_image.png)
+![Image](/lab2_images/first_image.png)
 
