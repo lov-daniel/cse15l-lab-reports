@@ -60,3 +60,9 @@ class ChatServer {
 insert text here lol
 
 ![Image](/lab2_images/second_image.png)
+
+## SSH Keys
+
+![Image](/lab2_images/ssh_location.png)
+The absolute path for my ```public key``` is ```C:\Users\dlov\.ssh\id_rsa.pub```.
+The absoulte path for my ```private key``` is ```C:\Users\dlov\.ssh\id_rsa```.
