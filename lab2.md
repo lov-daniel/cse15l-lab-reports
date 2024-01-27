@@ -64,5 +64,8 @@ insert text here lol
 ## SSH Keys
 
 ![Image](/lab2_images/ssh_location.png)
-The absolute path for my ```public key``` is ```C:\Users\dlov\.ssh\id_rsa.pub```.
-The absoulte path for my ```private key``` is ```C:\Users\dlov\.ssh\id_rsa```.
+- The absoulte path for my ```private key``` is ```C:\Users\dlov\.ssh\id_rsa```.
+
+After the running the ```scp``` command and copying the public key onto my remote account, I was able to log into my remote account without being prompted to give a passphrase.
+
+![Image](/lab2_images/ssh_image.png)
