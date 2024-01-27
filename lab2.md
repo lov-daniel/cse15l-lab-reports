@@ -57,14 +57,14 @@ class ChatServer {
 
 ![Image](/lab2_images/first_image.png)
 
-insert text here lol
+- In the screenshot above, the ```handleRequest``` method is being called with the argument of ```new URI("https://localhost:4000/add-message?s=hello&user=sophia")``` to be passed in. From this request,
 
 ![Image](/lab2_images/second_image.png)
 
 ## SSH Keys
 
 ![Image](/lab2_images/ssh_location.png)
-- The absoulte path for my ```private key``` is ```C:\Users\dlov\.ssh\id_rsa```.
+- The absolute path for my ```private key``` is ```C:\Users\dlov\.ssh\id_rsa```.
 
 After the running the ```scp``` command and copying the public key onto my remote account, I was able to log into my remote account without being prompted to give a passphrase.
 
