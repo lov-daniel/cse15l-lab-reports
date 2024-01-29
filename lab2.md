@@ -64,7 +64,10 @@ class ChatServer {
 ## SSH Keys
 
 ![Image](/lab2_images/ssh_location.png)
-- The absolute path for my ```private key``` is ```C:\Users\dlov\.ssh\id_rsa```.
+- The absolute path for my ```private key``` is ```C:\Users\dlov\.ssh\id_rsa```, which is located on my personal computer.
+
+![Image](/lab2_images/ssh_location_public.png)
+- The absolute path for my ```public key``` is ```/home/linux/ieng6/oce/90/dlov/.ssh/authorized_keys```, which is located on the ieng6 computer.
 
 After the running the ```scp``` command and copying the public key onto my remote account, I was able to log into my remote account without being prompted to give a passphrase.
 
