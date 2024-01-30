@@ -86,3 +86,7 @@ class ChatServer {
 After the running the ```scp``` command and copying the public key onto my remote account, I was able to log into my ```ieng6``` remote account without being prompted to give a passphrase.
 
 ![Image](/lab2_images/ssh_image.png)
+
+## Reflection
+
+Prior to the lab during week three, I had no idea how ```ssh``` worked or what it was. I am beginning to understand its uses both within the scope of this course and some possible uses of it in industry after talking to some of the tutors. The ability to access a remote computer from a terminal is something that I did not know what possible.
