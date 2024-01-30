@@ -60,10 +60,20 @@ class ChatServer {
 - In the screenshot above, the ```handleRequest``` method is being called with the argument of ```new URI("https://localhost:4000/add-message?s=hello&user=sophia")``` to be passed in.
 - Since the URI contains ```/add-message```, the method calls ```getQuery()``` and then calls ```.split("=")``` to separate each part of the query, resulting in the String array named ```parameters``` containing ```[s, hello&user, sophia]```.
 - The method then checks if ```s``` was the first part of the query, and since it is, the information about the message is then obtained by splitting the second element of the ```parameters``` String array. The result is a second String array named ```message_info```, which stores ```[hello, user]```.
-- The method checks ```user``` is stored inside of the ```message_info``` String array, and since it is, it concatenates a formatted string to the ```messages``` variable, which is then returned, displaying the message ```sophia: hello```.
-- The formatted string uses ```parameters[2]```, which is the name of the user (obtained in step 2) and ```message_info[0]```, which contains the actual message (obtained in step 4).
+- The method checks if ```user``` is stored inside of the ```message_info``` String array, and since it is, it concatenates a formatted string to the ```messages``` variable, which is then returned, displaying the message ```sophia: hello```.
+- The String ```messages``` is used to store all the messages. Each message is simply concatenated to ```messages``` upon each successful call.
+- The formatted string uses ```parameters[2]```, which is the name of the user (obtained in step 2) and ```message_info[0]```, which contains the actual message (obtained in step 3).
+- ```messages``` at the end of this screenshot is ```"sophia: hello\n"```.
 
 ![Image](/lab2_images/second_image.png)
+
+- In the screenshot above, the ```handleRequest``` method is being called with the argument of ```new URI("https://localhost:4000/add-message?s=halloooooo&user=daniel")``` to be passed in.
+- Since the URI contains ```/add-message```, the method calls ```getQuery()``` and then calls ```.split("=")``` to separate each part of the query, resulting in the String array named ```parameters``` containing ```[s, halloooooo&user, daniel]```.
+- The method then checks if ```s``` was the first part of the query, and since it is, the information about the message is then obtained by splitting the second element of the ```parameters``` String array. The result is a second String array named ```message_info```, which stores ```[halloooooo, user]```.
+- The method checks if ```user``` is stored inside of the ```message_info``` String array, and since it is, it concatenates a formatted string to the ```messages``` variable, which is then returned, displaying the message ```daniel: halloooooo```.
+- The String ```messages``` is used to store all the messages. Each message is simply concatenated to ```messages``` upon each successful call.
+- The formatted string uses ```parameters[2]```, which is the name of the user (obtained in step 2) and ```message_info[0]```, which contains the actual message (obtained in step 3).
+- ```messages``` at the end of this screenshot is ```"sophia: hello\ndaniel: halloooooo\n"```.
 
 ## SSH Keys
 
