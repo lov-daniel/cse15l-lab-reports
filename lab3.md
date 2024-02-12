@@ -2,7 +2,7 @@
 
 ## Bugs in Week 4 Lab
 
-The bug in focus will be involving the ```ReverseInPlace()``` method located in ```.\lab3\ArrayExamples.java```. The issue the method is that it was not utilizing a temporary variable, meaning that some elements are becoming overwritten. <br>
+The bug in focus will be involving the ```ReverseInPlace``` method located in ```.\lab3\ArrayExamples.java```. The issue the method is that it was not utilizing a temporary variable, meaning that some elements are becoming overwritten. <br>
 <br>
 It does not appear like buggy code in the case of an array with a single element.
 ```
@@ -141,7 +141,7 @@ technical/plos
 ```
 This command is useful if you need to find all the different directories. It reminds me of the ```ls``` command but it shows how deep each directory may go. This can be seen in the output above, the directory ```technical/government``` has many other directories within it, such as ```technical/government/Alcohol_Problems```. The command would be useful to find all of those directories if needed.
 
-## ```find -newer``` Command Line Option[^2]
+## ```find -newer``` Command Line Option[^1]
 The command line option ```-newer``` for find recursively searches for all files that are more recently modified than a specified reference file. If we use the command ```find -newer test.sh``` in the working directory ```.\docsearch```, it displays all files that were more recently modified than ```test.sh```.
 ```
 ./DocSearchServer.class
@@ -166,12 +166,11 @@ darrenlov@darren:/mnt/c/Users/dlov/Desktop/cse15l/docsearch$ find . -newermt "-1
 ```
 This is could be useful because you would be able to check what files were recently modified within a specified time period. It could be used to check what files someone may have modified if another user was on the computer. The command recursively checks through all directories for any files that were modified in the past one day.
 
-## ```find -size``` Command Line Option[^2]
+## ```find -size``` Command Line Option[^1]
 The command line option ```-size``` for find recursively searches all files for files that are either larger, equal to, or smaller, depending on the specified amount. For example, if the command ```find -size -10k``` is run in the working directory ```.\docsearch```, it will search each directory within ```.\docsearch``` for any files that are smaller than ```10 kilobytes.```
 
 ```
 darrenlov@darren:/mnt/c/Users/dlov/Desktop/cse15l/docsearch$ find -size -10k
-.
 ./DocSearchServer.class
 ./DocSearchServer.java
 ./FileHelpers.class
@@ -527,11 +526,53 @@ darrenlov@darren:/mnt/c/Users/dlov/Desktop/cse15l/docsearch$ find -size +100k
 ./technical/government/Gen_Account_Office/Sept27-2002_d02966.txt
 ./technical/government/Gen_Account_Office/Statements_Feb28-1997_volume.txt
 ```
-This command, in the context of a larger project, is useful because it could be used to find large files, which may be important files with lots of intricate code. In this case, we can see that ```./lib/junit-4.13.2.jar``` was found with the command, which is an important part to help with testing our program. It also may be used to find files that are taking up excessive space.
+This command, in the context of a larger project, is useful because it could be used to find large files, which may be important files with lots of intricate code. In this case, we can see that ```./lib/junit-4.13.2.jar``` was found with the command, which is an important file to help with testing our program. It also may be used to find files that are taking up excessive space.
+
+## ```find -maxdepth``` Command Line Option[^1]
+
+The command line option ```-maxdepth``` limits the amount of directories that any given command is allowed to traverse through. If we run the command ```find -maxdepth 1``` in the working directory ```.\docsearch```, the find command will only search through the working directory.
+
+```
+darrenlov@darren:/mnt/c/Users/dlov/Desktop/cse15l/docsearch$ find -maxdepth 1
+./biomed-sizes.txt
+./DocSearchServer.class
+./DocSearchServer.java
+./FileHelpers.class
+./find-results.txt
+./find-text.sh
+./grep-results.txt
+./Handler.class
+./lib
+./plos-sizes.txt
+./README.md
+./Server.class
+./Server.java
+./ServerHttpHandler.class
+./start.sh
+./technical
+./test.sh
+./TestDocSearch.class
+./TestDocSearch.java
+./text-results.txt
+./URLHandler.class
+```
+This can be useful because it limits the scope of which your find command may go. Instead of recursing through every directory like it normally would, it simply goes into a single directory, in this case working directory ```.\docsearch```.<br>
+<br>
+The ```-maxdepth``` commandline option can be used in combination with the previously mentioned options. For example, by running the command ```find -maxdepth 1 -size -2k``` in the working directory ```.\docsearch```, we get the following output.
+
+```
+darrenlov@darren:/mnt/c/Users/dlov/Desktop/cse15l/docsearch$ find . -maxdepth 1 -size -2k
+./DocSearchServer.class
+./find-text.sh
+./lib
+./README.md
+./start.sh
+./technical
+./test.sh
+./TestDocSearch.java
+./URLHandler.class
+```
+This can be useful if you want to know what small files exist in the current directory specifically. By combining the ```-maxdepth``` command line option with other command line options, we are able to manipulate how deep our commands with recurse and in the case of ```-maxdepth 1```, it stays strictly in the working directory and does not traverse into other directories that may be in the working directory.
 
 # Sources
-[^1]: ChatGPT
-[^2]: [Linux Manual Page](https://man7.org/linux/man-pages/man1/find.1.html)
-
-ChatGPT Prompts:
-- how do i use ```find -type```
+[^1]: [Linux Manual Page](https://man7.org/linux/man-pages/man1/find.1.html)
