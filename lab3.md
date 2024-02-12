@@ -108,3 +108,38 @@ OPTIONS
        options -H, -L, -P, -D and -O must appear before the first path name, if at all.  A double dash -- can also be used to signal that any remaining arguments are not options (though  ensuring
        that all start points begin with either `./' or `/' is generally safer if you use wildcards in the list of start points).
 ```
+
+## ```find -type``` Command Line Option
+From this information, we are able to see that find has many different command line options that all affect the function of ```find``` one way or another. One way we can do this is by utilizing ```-type``` with ```find```. While we are in the working directory ```.\docsearch\```, we can run the command ```find technical/plos -type f```, it will return find all files in the directory ```.\docsearch\technical\plos``` and output all of their names.
+
+```
+darrenlov@darren:/mnt/c/Users/dlov/Desktop/cse15l/docsearch$ find technical/plos -type f
+technical/plos/journal.pbio.0020001.txt
+technical/plos/journal.pbio.0020010.txt
+technical/plos/journal.pbio.0020012.txt
+technical/plos/journal.pbio.0020013.txt
+... (omitted due to length)
+technical/plos/pmed.0020281.txt
+```
+In this case, ```-type f``` is being used to find all the files within the directory ```.\docsearch\technical\plos\```. This could be useful if a list of all the files, regardless of their type, is needed as the command excludes directories.<br>
+<br>
+
+Another way to use this command is ```find -type d```, which will only search for directories.  If we run the command ```find technical -type d``` while in the working directory ```.\docsearch\```. It will recursively search through all the possible directories within the specified directory.
+```
+darrenlov@darren:/mnt/c/Users/dlov/Desktop/cse15l/docsearch$ find technical -type d
+technical
+technical/911report
+technical/biomed
+technical/government
+technical/government/About_LSC
+technical/government/Alcohol_Problems
+technical/government/Env_Prot_Agen
+technical/government/Gen_Account_Office
+technical/government/Media
+technical/government/Post_Rate_Comm
+technical/plos
+```
+This command is useful if you need to find all the different directories. It reminds me of the ```ls``` command but it shows how deep each directory goes, whik
+# Sources
+ChatGPT (Prompts)
+- "how do i use find -type"
