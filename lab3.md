@@ -2,7 +2,7 @@
 
 ## Bugs in Week 4 Lab
 
-The bug in focus will be involving the ```ReverseInPlace``` method located in ```.\lab3\ArrayExamples.java```. The issue the method is that it was not utilizing a temporary variable, meaning that some elements are becoming overwritten. <br>
+The bug in focus will be involving the ```ReverseInPlace``` method located in ```./lab3/ArrayExamples.java```. The issue the method is that it was not utilizing a temporary variable, meaning that some elements are becoming overwritten. <br>
 <br>
 It does not appear like buggy code in the case of an array with a single element.
 ```
@@ -30,32 +30,7 @@ public void testReverseInPlaceMoreElems() {
 }
 ```
 The test is inputs an array of four elements and expects the same array to be editted in reverse order. When we run the tester file now, it results in a failure in one of the JUnit tests, specifically the one that was just implemented. The following output is given.
-```
-JUnit version 4.13.2
-...E..
-Time: 0.03
-There was 1 failure:
-1) testReverseInPlaceMoreElems(ArrayTests)
-arrays first differed at element [2]; expected:<2> but was:<3>
-        at org.junit.internal.ComparisonCriteria.arrayEquals(ComparisonCriteria.java:78)
-        at org.junit.internal.ComparisonCriteria.arrayEquals(ComparisonCriteria.java:28)
-        at org.junit.Assert.internalArrayEquals(Assert.java:534)
-        at org.junit.Assert.assertArrayEquals(Assert.java:418)
-        at org.junit.Assert.assertArrayEquals(Assert.java:429)
-        at ArrayTests.testReverseInPlaceMoreElems(ArrayTests.java:16)
-        ... 30 trimmed
-Caused by: java.lang.AssertionError: expected:<2> but was:<3>
-        at org.junit.Assert.fail(Assert.java:89)
-        at org.junit.Assert.failNotEquals(Assert.java:835)
-        at org.junit.Assert.assertEquals(Assert.java:120)
-        at org.junit.Assert.assertEquals(Assert.java:146)
-        at org.junit.internal.ExactComparisonCriteria.assertElementsEqual(ExactComparisonCriteria.java:8)
-        at org.junit.internal.ComparisonCriteria.arrayEquals(ComparisonCriteria.java:76)
-        ... 36 more
-
-FAILURES!!!
-Tests run: 5,  Failures: 1
-```
+![image](https://github.com/lov-daniel/cse15l-lab-reports/assets/83891229/270cf353-f114-4ffd-a111-e1a4ce995616)
 By utilizing a debugging print statement: ```System.err.println(Arrays.toString(input1));```, we are able to identify the symptoms. As it stands, the current output of the ```ReverseInPlace()``` method with the input of ```[1, 2, 3 ,4]``` is ```[4, 3, 3, 4]```. This allows us to identify that the method is not reversing properly and is actually overwritting some of the elements within the array.<br>
 <br>
 This happens because the original code does not make use of a temporary variable, meaning that while changing elements, some become overwritten as a result. The fixed code is as presented in the following block:
@@ -110,7 +85,7 @@ OPTIONS
 ```
 
 ## ```find -type``` Command Line Option[^1]
- One way we can do this is by utilizing ```-type``` with ```find```. While we are in the working directory ```.\docsearch\```, we can run the command ```find technical/plos -type f```, it will return find all files in the directory ```.\docsearch\technical\plos``` and output all of their names.
+ One way we can do this is by utilizing ```-type``` with ```find```. While we are in the working directory ```./docsearch/```, we can run the command ```find technical/plos -type f```, it will return find all files in the directory ```./docsearch/technical/plos``` and output all of their names.
 
 ```
 darrenlov@darren:/mnt/c/Users/dlov/Desktop/cse15l/docsearch$ find technical/plos -type f
@@ -367,10 +342,10 @@ technical/plos/pmed.0020275.txt
 technical/plos/pmed.0020278.txt
 technical/plos/pmed.0020281.txt
 ```
-In this case, ```-type f``` is being used to find all the files within the directory ```.\docsearch\technical\plos\```. This could be useful if a list of all the files, regardless of their type, is needed as the command excludes directories.<br>
+In this case, ```-type f``` is being used to find all the files within the directory ```./docsearch/technical/plos/```. This could be useful if a list of all the files, regardless of their type, is needed as the command excludes directories.<br>
 <br>
 
-Another way to use this command is ```find -type d```, which will only search for directories.  If we run the command ```find technical -type d``` while in the working directory ```.\docsearch\```. It will recursively search through all the possible directories within the specified directory.
+Another way to use this command is ```find -type d```, which will only search for directories.  If we run the command ```find technical -type d``` while in the working directory ```./docsearch/```. It will recursively search through all the possible directories within the specified directory.
 ```
 darrenlov@darren:/mnt/c/Users/dlov/Desktop/cse15l/docsearch$ find technical -type d
 technical
@@ -389,7 +364,7 @@ This command is useful if you need to find all the different directories. It rem
 <br>
 Information about this command line option is from the [Linux Manual Page](https://man7.org/linux/man-pages/man1/find.1.html).
 ## ```find -newer``` Command Line Option[^1]
-The command line option ```-newer``` for find recursively searches for all files that are more recently modified than a specified reference file. If we use the command ```find -newer test.sh``` in the working directory ```.\docsearch```, it displays all files that were more recently modified than ```test.sh```.
+The command line option ```-newer``` for find recursively searches for all files that are more recently modified than a specified reference file. If we use the command ```find -newer test.sh``` in the working directory ```./docsearch```, it displays all files that were more recently modified than ```test.sh```.
 ```
 ./DocSearchServer.class
 ./FileHelpers.class
@@ -399,10 +374,10 @@ The command line option ```-newer``` for find recursively searches for all files
 ./TestDocSearch.class
 ./URLHandler.class
 ```
-This could be useful with ```bash shell scripts``` as it may be used to check what files were modified after execution. In this case, ```test.sh``` compiles all the Java files within the working directory ```.\docsearch```, which is why the output is only files with the type of ```.class```.<br>
+This could be useful with ```bash shell scripts``` as it may be used to check what files were modified after execution. In this case, ```test.sh``` compiles all the Java files within the working directory ```./docsearch```, which is why the output is only files with the type of ```.class```.<br>
 <br>
 
-Another way to use ```find -newer``` is by using the command ```find -newermt```. This command allows the user to check for modification dates within a certain number of time. If the command ```find . -newermt "-1 days"``` is ran in the working directory ```.\docsearch```, the following output is given.
+Another way to use ```find -newer``` is by using the command ```find -newermt```. This command allows the user to check for modification dates within a certain number of time. If the command ```find . -newermt "-1 days"``` is ran in the working directory ```./docsearch```, the following output is given.
 ```
 darrenlov@darren:/mnt/c/Users/dlov/Desktop/cse15l/docsearch$ find . -newermt "-1 days"
 ./DocSearchServer.class
@@ -415,7 +390,7 @@ This is could be useful because you would be able to check what files were recen
 <br>
 Information about this command line option is from the [Linux Manual Page](https://man7.org/linux/man-pages/man1/find.1.html).
 ## ```find -size``` Command Line Option[^1]
-The command line option ```-size``` for find recursively searches all files for files that are either larger, equal to, or smaller, depending on the specified amount. For example, if the command ```find -size -10k``` is run in the working directory ```.\docsearch```, it will search each directory within ```.\docsearch``` for any files that are smaller than ```10 kilobytes.```
+The command line option ```-size``` for find recursively searches all files for files that are either larger, equal to, or smaller, depending on the specified amount. For example, if the command ```find -size -10k``` is run in the working directory ```./docsearch```, it will search each directory within ```./docsearch``` for any files that are smaller than ```10 kilobytes.```
 
 ```
 darrenlov@darren:/mnt/c/Users/dlov/Desktop/cse15l/docsearch$ find -size -10k
@@ -739,7 +714,7 @@ darrenlov@darren:/mnt/c/Users/dlov/Desktop/cse15l/docsearch$ find -size -10k
 ```
 The smallest file is listed at the bottom. This command is useful because it is may help with cleaning up any possibily unnecessary files that may be cluttering the directory. In this case ```./URLHandler.class``` is a necessary file.<br>
 <br>
-Similarly, we can use the ```find -size``` command to search for files that may be extremely large. By running the command ```find -size +100k``` is run in the working directory ```.\docsearch```, it will search each directory within ```.\docsearch``` for any files that are larger than ```100 kilobytes.```
+Similarly, we can use the ```find -size``` command to search for files that may be extremely large. By running the command ```find -size +100k``` is run in the working directory ```./docsearch```, it will search each directory within ```./docsearch``` for any files that are larger than ```100 kilobytes.```
 
 ```
 darrenlov@darren:/mnt/c/Users/dlov/Desktop/cse15l/docsearch$ find -size +100k
@@ -779,7 +754,7 @@ This command, in the context of a larger project, is useful because it could be 
 Information about this command line option is from the [Linux Manual Page](https://man7.org/linux/man-pages/man1/find.1.html).
 ## ```find -maxdepth``` Command Line Option[^1]
 
-The command line option ```-maxdepth``` limits the amount of directories that any given command is allowed to traverse through. If we run the command ```find -maxdepth 1``` in the working directory ```.\docsearch```, the find command will only search through the working directory.
+The command line option ```-maxdepth``` limits the amount of directories that any given command is allowed to traverse through. If we run the command ```find -maxdepth 1``` in the working directory ```./docsearch```, the find command will only search through the working directory.
 
 ```
 darrenlov@darren:/mnt/c/Users/dlov/Desktop/cse15l/docsearch$ find -maxdepth 1
@@ -805,9 +780,9 @@ darrenlov@darren:/mnt/c/Users/dlov/Desktop/cse15l/docsearch$ find -maxdepth 1
 ./text-results.txt
 ./URLHandler.class
 ```
-This can be useful because it limits the scope of which your find command may go. Instead of recursing through every directory like it normally would, it simply goes into a single directory, in this case working directory ```.\docsearch```.<br>
+This can be useful because it limits the scope of which your find command may go. Instead of recursing through every directory like it normally would, it simply goes into a single directory, in this case working directory ```./docsearch```.<br>
 <br>
-The ```-maxdepth``` commandline option can be used in combination with the previously mentioned options. For example, by running the command ```find -maxdepth 1 -size -2k``` in the working directory ```.\docsearch```, we get the following output.
+The ```-maxdepth``` commandline option can be used in combination with the previously mentioned options. For example, by running the command ```find -maxdepth 1 -size -2k``` in the working directory ```./docsearch```, we get the following output.
 
 ```
 darrenlov@darren:/mnt/c/Users/dlov/Desktop/cse15l/docsearch$ find . -maxdepth 1 -size -2k
