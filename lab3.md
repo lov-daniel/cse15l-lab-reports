@@ -30,7 +30,7 @@ public void testReverseInPlaceMoreElems() {
 }
 ```
 The test is inputs an array of four elements and expects the same array to be editted in reverse order. When we run the tester file now, it results in a failure in one of the JUnit tests, specifically the one that was just implemented. The following output is given.
-![image](https://github.com/lov-daniel/cse15l-lab-reports/assets/83891229/270cf353-f114-4ffd-a111-e1a4ce995616)
+![image](https://github.com/lov-daniel/cse15l-lab-reports/assets/83891229/237c42d5-26c9-4c7f-9e71-fef712c99b2e)
 By utilizing a debugging print statement: ```System.err.println(Arrays.toString(input1));```, we are able to identify the symptoms. As it stands, the current output of the ```ReverseInPlace()``` method with the input of ```[1, 2, 3 ,4]``` is ```[4, 3, 3, 4]```. This allows us to identify that the method is not reversing properly and is actually overwritting some of the elements within the array.<br>
 <br>
 This happens because the original code does not make use of a temporary variable, meaning that while changing elements, some become overwritten as a result. The fixed code is as presented in the following block:
