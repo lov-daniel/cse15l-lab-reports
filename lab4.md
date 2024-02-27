@@ -65,10 +65,10 @@ After exiting ```vim```, our working directory does not change, so we are still 
  - The keystrokes used were ```bash test.sh <ENTER>```. After these keystrokes were inputted, we were able to run the ```bash``` script, which contains commands to compile all the ```java``` files in the directory and then run the methods within ```./ListExamplesTest.java```. This resulted in a passed ```JUnit``` test since we have fixed the bug in ```./ListExamples.java```.
 
 ## Step 9 (Commiting And Pushing Changes)
-Since we are happy with the changes made now, we can start committing anbd pushing the modified file, ```./ListExamples.java``` into the forked repository that we have made.
+Since we are happy with the changes made now, we can start committing and pushing the modified file, ```./ListExamples.java``` into the forked repository that we have made.
 
 ![image](https://github.com/lov-daniel/cse15l-lab-reports/assets/83891229/1bca331a-640e-4283-a18d-82e48dd14d0c)
- - First we type ```git add ListExamples.java <ENTER>``` in order to add our changes in ```./ListExamples.java``` to the commit history.
+ - While still in the working directory ```./lab7fork```, we type ```git add ListExamples.java <ENTER>``` in order to add our changes in ```./ListExamples.java``` to the commit history.
  - Next, ```git commit <ENTER>``` in order to actually commit our changes, which prompts a commit message.
 
 ![image](https://github.com/lov-daniel/cse15l-lab-reports/assets/83891229/16ebf4fe-e1a0-4ae1-acc3-e030cdd9c4b3)
