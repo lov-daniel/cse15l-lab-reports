@@ -27,7 +27,7 @@ Going back to the command line terminal, we can begin cloning the repository int
 
 ![image](https://github.com/lov-daniel/cse15l-lab-reports/assets/83891229/68c90c61-844a-4162-931b-84c2d6fbd751)
  - The keystrokes used in this image were ```git clone <CTRL+V> <ENTER>``` followed by ```ls <ENTER>``` in order to confirm that the repository was properly cloned into the ```ieng6``` machine.
- - The current working directory is ```./```, mneaning that the repository was cloned into the root of the ```ieng6``` machine.
+ - The current working directory is ```./```, meaning that the repository was cloned into the root of the ```ieng6``` machine.
  - After these keystrokes, every directory in the root was printed and we can see that a new directory was created in the root named ```lab7fork```, meaning that the ```git clone``` was successful.
 
 To prepare for the next step, we can move into the directory that we had just cloned:
