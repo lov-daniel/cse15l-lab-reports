@@ -225,4 +225,4 @@ public class TestListExamples {
 
 # Reflection
 
-During this second half of the quarter, I think the most important thing that I have learned is how to edit files without having to use a mouse. At first it was extremely difficult, but as I used it more and more, I found it very convenient to be able to keep my hands on the keyboard at all times.
+During this second half of the quarter, I think the most important thing that I have learned is how to edit files without having to use a mouse using ```vim```. At first it was extremely difficult, but as I used it more and more, I found it very convenient to be able to keep my hands on the keyboard at all times. Especially during the skill demo, I noticed that my ability to edit the files was significantly faster than anything I would be able to do with a mouse once I had a good amount of knowledge about the different combinations.
